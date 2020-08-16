@@ -6,6 +6,7 @@
 #define HP 100
 int BASE_HP{ HP };
 int HP_DIFFERENCE;
+std::string awaitInput; // Defines useless variable just to wait until the console closes
 std::vector<int> usedHP(HP);
 
 
@@ -36,8 +37,7 @@ int main()
 		else
 		{
 			fprintf_s(stdout, "%s", "Anti Cheat triggered!");
-			std::string x;
-			std::cin >> x;
+			std::cin >> awaitInput; 
 			return EXIT_FAILURE;
 		}
 		
@@ -45,5 +45,6 @@ int main()
 		Sleep(2000);
 	}
 	fprintf_s(stdout, "%s\n", "You are dead!");
+	std::cin >> awaitInput;
 	return EXIT_SUCCESS;
 }
